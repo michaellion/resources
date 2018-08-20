@@ -1,0 +1,14 @@
+server:
+  port: 9000
+spring:
+  thymeleaf:
+    cache: false
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/resources?useSSL=false
+    username: root
+    password: jian
+    driver-class-name: com.mysql.jdbc.Driver
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/index.css}" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div id="leftframe">
+        <div id="lefttop">
+            <a th:href="@{/}">
+                <img th:src="@{/img/资源库.png}" width="200px">
+            </a>
+            <span style="font-size: large">資源庫</span>
+        </div>
+        <div id="leftbottom">
+            <div id="first">
+                <a href="#">
+                    <img th:src="@{/img/全部.png}" width="60" style="margin-left: 20px;margin-top: 20px">
+                </a>
+                <a href="">
+                    <span style="font-size: 50px">全部</span>
+                </a>
+            </div>
+            <div id="second">
+                <a href="#">
+                    <img th:src="@{/img/文件.png}" width="60" style="margin-left: 20px;margin-top: 20px">
+                </a>
+                <a href="#">
+                    <span style="font-size: 50px">文档</span>
+                </a>
+            </div>
+            <div id="third">
+                <a href="#">
+                    <img th:src="@{/img/图片.png}" width="60" style="margin-left: 20px;margin-top: 20px">
+                </a>
+                <a href="#">
+                    <span style="font-size: 50px">图片</span>
+                </a>
+            </div>
+            <div id="fourth">
+                <a href="#">
+                    <img th:src="@{/img/相机视屏.png}" width="60" style="margin-left: 20px;margin-top: 20px">
+                </a>
+                <a href="">
+                    <span style="font-size: 50px">视频</span>
+                </a>
+            </div>
+            <div id="fifth">
+                <a href="#">
+                    <img th:src="@{/img/音乐.png}" width="60" style="margin-left: 20px;margin-top: 20px">
+                </a>
+                <a href="">
+                    <span style="font-size: 50px">音乐</span>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div id="rightframe">
+        <div id="righttop">
+            <div id="fileoperation">
+                <div id="upload">
+                    <a href="">
+                        <img th:src="@{/img/上传文件.png}" height="80px">
+                    </a>
+                </div>
+                <div id="createnew">
+                    <img th:src="@{/img/新建文件夹.png}" height="80px">
+                </div>
+
+            </div>
+            <div id="search">
+                <input type="search" placeholder="search" style="width: 200px;height: 50px" id="searchframe">
+            </div>
+        </div>
+
+
+        <div id="rightbottom">
+            <div id="explain">
+                <span>全部</span>
+
+            </div>
+            <div th:each="l:${lists}">
+                <div id="fileshow">
+
+                    <div id="pic">
+                        <img th:src="@{/img/文件夹.png}" width="80px">
+                    </div>
+                    <div id="filename">
+                       <!-- <span>文件名字</span>-->
+                        <span th:text="${l.fileName}"></span>
+                    </div>
+                    <div id="uploaddate">
+                        <span>创建日期</span>
+                    </div>
+                    <div id="filetype">
+                        <!--<span>類型</span>-->
+                        <span th:text="${l.suffix}"></span>
+                    </div>
+                    <div id="downloadlink">
+                      <!--  <span>下載鏈接</span>-->
+                        <a th:href="${l.fileUrl}">下载</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
